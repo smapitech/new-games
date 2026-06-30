@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kids Typing Adventure</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">SMAPIS KIDS CODING</p>
+        <h1>Kids Typing Adventure</h1>
+      </div>
+      <div class="top-stats">
+        <div class="stat"><span>⭐</span><strong id="totalStars">0</strong><small>Stars</small></div>
+        <div class="stat"><span>🏆</span><strong id="bestScore">0</strong><small>Best</small></div>
+        <button id="soundToggle" class="icon-button" aria-label="Toggle sound">🔊</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="homeScreen" class="screen active">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <span class="pill">Learn • Play • Type</span>
+            <h2>Ready for a typing adventure?</h2>
+            <p>Choose a game, collect stars, unlock levels, and keep playing without pressure.</p>
+            <div class="name-box">
+              <label for="playerName">Player name</label>
+              <input id="playerName" maxlength="18" placeholder="Type your name" />
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="planet">🪐</div>
+            <div class="rocket">🚀</div>
+            <div class="cloud cloud-one">☁️</div>
+            <div class="cloud cloud-two">☁️</div>
+          </div>
+        </div>
+
+        <section class="game-grid" aria-label="Typing games">
+          <button class="game-card" data-game="balloon"><span class="game-emoji">🎈</span><span><strong>Balloon Pop</strong><small>Type the letters before they float away.</small></span></button>
+          <button class="game-card" data-game="animal"><span class="game-emoji">🐵</span><span><strong>Feed the Animal</strong><small>Type the word to feed your hungry friend.</small></span></button>
+          <button class="game-card" data-game="rocket"><span class="game-emoji">🚀</span><span><strong>Rocket Typing</strong><small>Fill the fuel tank and launch into space.</small></span></button>
+          <button class="game-card" data-game="falling"><span class="game-emoji">🌧️</span><span><strong>Falling Letters</strong><small>Catch letters before they touch the ground.</small></span></button>
+          <button class="game-card" data-game="colour"><span class="game-emoji">🎨</span><span><strong>Type and Colour</strong><small>Type the colour word and paint the picture.</small></span></button>
+          <button class="game-card" data-game="garden"><span class="game-emoji">🌻</span><span><strong>Magic Garden</strong><small>Grow flowers by typing simple words.</small></span></button>
+          <button class="game-card" data-game="treasure"><span class="game-emoji">🗺️</span><span><strong>Keyboard Treasure</strong><small>Find the glowing key and open the chest.</small></span></button>
+          <button class="game-card" data-game="coding"><span class="game-emoji">💻</span><span><strong>Mini Coding</strong><small>Type tiny pieces of code and run them.</small></span></button>
+        </section>
+
+        <button id="continuousMode" class="primary-button large">▶ Start Continuous Adventure</button>
+      </section>
+
+      <section id="gameScreen" class="screen">
+        <div class="game-toolbar">
+          <button id="homeButton" class="secondary-button">← Home</button>
+          <div class="round-info">
+            <span id="gameTitle">Game</span>
+            <span>Round <strong id="roundNumber">1</strong></span>
+            <span>Score <strong id="roundScore">0</strong></span>
+          </div>
+          <button id="nextGameButton" class="secondary-button">Next Game →</button>
+        </div>
+        <div id="gameStage" class="game-stage"></div>
+        <div class="message-bar"><span id="encouragement">You can do it!</span></div>
+      </section>
+    </main>
+  </div>
+  <div id="celebration" class="celebration" aria-hidden="true"></div>
+  <script src="app.js"></script>
+<script src="../js/sound.js"></script>
+</body>
+</html>
